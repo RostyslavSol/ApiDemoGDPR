@@ -1,12 +1,26 @@
+import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
 import * as express from 'express';
 import { Router } from 'express-serve-static-core';
+import { DashboardController } from './controllers/dashboard.controller';
+import { SectionDetailsController } from './controllers/section.details.controller';
+import { ReportController } from './controllers/report.controller';
+import { InterviewController } from './controllers/interview.controller';
 
 class App {
-  express: express.Express;
+  app: express.Express;
 
   constructor() {
-    this.express = express();
-    this.registerRoutes();
+    const app = this.app = express();
+
+    this.addMiddlewares(app);
+    this.registerRoutes(app);
+  }
+
+  addMiddlewares(app: express.Express) {
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(cors());
   }
 
   /**
@@ -19,53 +33,25 @@ class App {
    *    POST:
    *      /section/:id
    */
-  registerRoutes() {
-    const router = express.Router()
-
-    this.registerQuestion(router);
-    this.registerReport(router);
-    this.registerSectionDetails(router);
-    this.registerSections(router);
-    this.registerEmpty(router);
-
-    this.express.use('/', router);
+  registerRoutes(app: express.Express) {
+    app.use('/section/:sectionId/question/:questionId', new InterviewController().getRouter());
+    app.use('/section/:sectionId/report', new ReportController().getRouter())
+    app.use('/section/:sectionId', new SectionDetailsController().getRouter())
+    app.use('/sections', new DashboardController().getRouter());
+    app.use('/', this.getEmptyRouter());
   }
 
-  registerEmpty(router: Router) {
+  getEmptyRouter(): Router {
+    const router = express.Router()
+
     router.get('/', (req, res) => {
       res.json({
         message: 'Rostyslav!'
       });
     });
-  }
 
-  registerSections(router: Router) {
-    router.get('/sections', (req, res) => {
-      // TODO
-      res.json([{sectionId: 1}]);
-    });
-  }
-
-  registerSectionDetails(router: Router) {
-    router.get('/section/:sectionId', (req, res) => {
-      // TODO
-      res.json({sectionId: req.params['sectionId']});
-    });
-  }
-
-  registerReport(router: Router) {
-    router.get('/section/:sectionId/report', (req, res) => {
-      // TODO
-      res.json([{sectionId: req.params['sectionId'], report: {}}]);
-    });
-  }
-
-  registerQuestion(router: Router) {
-    router.get('/section/:sectionId/question/:questionId', (req, res) => {
-      // TODO
-      res.json({sectionId: req.params['sectionId'], questionId: req.params['questionId']});
-    });
+    return router;
   }
 }
 
-export default new App().express;
+export default new App().app;
