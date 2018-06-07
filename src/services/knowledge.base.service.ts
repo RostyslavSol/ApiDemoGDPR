@@ -16,18 +16,18 @@ export class KnowledgeBaseService {
   }
 
   public async getSections(): Promise<ISection[]> {
-    return await new Promise<ISection[]>(() => this.knowledgeRepository.sections);
+    return await Promise.resolve(this.knowledgeRepository.sections);
   }
 
   public async getSectionDetails(sectionId: number): Promise<ISectionDetails> {
-    return await new Promise<ISectionDetails>(() => this.knowledgeRepository.sectionDetails)
+    return await Promise.resolve(this.knowledgeRepository.sectionDetails);
   }
 
   public async getQuestion(sectionId: number, questionId: number): Promise<IQuestion> {
-    return await new Promise<IQuestion>(() => this.knowledgeRepository.question);
+    return await Promise.resolve(this.knowledgeRepository.question);
   }
 
   public async getReport(sectionId: number): Promise<IReport> {
-    return await new Promise<IReport>(() => this.reportGenerator.report);
+    return await Promise.resolve(this.reportGenerator.report);
   }
 }

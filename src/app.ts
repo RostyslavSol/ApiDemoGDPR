@@ -27,30 +27,31 @@ class App {
    * Routes:
    *    GET:
    *      /sections
-   *      /section/:id
-   *      /section/:id/question/:id
-   *      /section/:id/report
+   *      /sections/:id
+   *      /sections/:id/questions/:id
+   *      /sections/:id/report
    *    POST:
-   *      /section/:id
+   *      /sections/:id
    */
   registerRoutes(app: express.Express) {
-    app.use('/section/:sectionId/question/:questionId', new InterviewController().getRouter());
-    app.use('/section/:sectionId/report', new ReportController().getRouter())
-    app.use('/section/:sectionId', new SectionDetailsController().getRouter())
-    app.use('/sections', new DashboardController().getRouter());
-    app.use('/', this.getEmptyRouter());
-  }
-
-  getEmptyRouter(): Router {
     const router = express.Router()
 
+    new InterviewController(router);
+    new ReportController(router);
+    new SectionDetailsController(router);
+    new DashboardController(router);
+
+    this.registerEmptyRoute(router);
+
+    app.use('/', router);
+  }
+
+  registerEmptyRoute(router: Router) {
     router.get('/', (req, res) => {
       res.json({
         message: 'Rostyslav!'
       });
     });
-
-    return router;
   }
 }
 

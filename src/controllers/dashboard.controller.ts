@@ -4,11 +4,9 @@ import { ISection } from "../models/dashboard/section.model";
 
 export class DashboardController {
   private _service: KnowledgeBaseService;
-  private _router: Router;
 
-  constructor() {
+  constructor(router: Router) {
     this._service = new KnowledgeBaseService();
-    const router = this._router = Router();
 
     this.registerGetSections(router);
   }
@@ -23,9 +21,5 @@ export class DashboardController {
         console.error('[DashboardController] registerGetSections()', err);
       }
     });
-  }
-
-  public getRouter(): Router {
-    return this._router;
   }
 }

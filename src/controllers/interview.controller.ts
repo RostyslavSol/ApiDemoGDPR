@@ -4,17 +4,15 @@ import { IQuestion } from "../models/interview/question.model";
 
 export class InterviewController {
   private _service: KnowledgeBaseService;
-  private _router: Router;
 
-  constructor() {
+  constructor(router: Router) {
     this._service = new KnowledgeBaseService();
-    const router = this._router = Router();
 
     this.registerGetQuestion(router);
   }
 
   public registerGetQuestion(router: Router): void {
-    router.get('/section/:sectionId/question/:questionId', async (req: Request, res: Response) => {
+    router.get('/sections/:sectionId/questions/:questionId', async (req: Request, res: Response) => {
       try {
         const sectionId  = Number(req.params['sectionId']);
         const questionId = Number(req.params['questionId']);
@@ -26,9 +24,5 @@ export class InterviewController {
         console.error('[InterviewController] registerGetQuestion()', err);
       }
     });
-  }
-
-  public getRouter(): Router {
-    return this._router;
   }
 }
