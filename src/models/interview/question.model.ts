@@ -10,4 +10,5 @@ export interface IQuestion {
   info:           string;
   answers:        IAnswer[];
   references:     IReference[];
+  isLast:         boolean;
 }

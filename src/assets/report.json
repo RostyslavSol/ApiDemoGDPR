@@ -1,0 +1,10 @@
+{
+  "sectionId": 1,
+  "sectionName": "Lawfulness of Personal Data Processing",
+  "summary": [
+    { "isSuccess": true,  "text": "Your organization performs processing of personal data in order to carry out its business" },
+    { "isSuccess": true, "text": "Your organization is a Data Controller" },
+    { "isSuccess": true, "text": "Your organization has a legal base for personal data processing: Consent" },
+    { "isSuccess": false, "text": "The consent form of your organization is not compliant with GDPR. Please, visit our reference section" }
+  ]
+}

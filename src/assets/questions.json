@@ -1,0 +1,187 @@
+[
+  {
+    "questionId": 1,
+    "title": "Does the organization offers goods and services via the Internet?",
+    "invalidExample": null,
+    "validExample": null,
+    "info": "No additional information provided",
+    "answers": [
+      {
+        "code": "G_GDSSERVINET",
+        "text": "My organization provides goods and services through the internet"
+      },
+      {
+        "code": "G_NGDSSERVINET",
+        "text": "My organization does not carry out any internet related activity"
+      }
+    ],
+    "references": [],
+    "isLast": false
+  },
+  {
+    "questionId": 2,
+    "title": "Are there citizens of EU among organization's clients?",
+    "invalidExample": null,
+    "validExample": null,
+    "info": "Citizenship of the European Union (EU) is afforded to qualifying citizens of European Union member states. List of member states can be found in the references section on the right",
+    "answers": [
+      {
+        "code": "G_EUCTZCLIENT",
+        "text": "Yes, my organization operates on personal data of EU citizens"
+      },
+      {
+        "code": "G_NEUCTZCLIENT",
+        "text": "No, my organization does not possess any personal data of EU citizens"
+      }
+    ],
+    "references": [
+      {
+        "title": "EU member state list",
+        "link": "https://en.wikipedia.org/wiki/Member_state_of_the_European_Union#List"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 3,
+    "title": "Does your organization performs any of the following actions with the data: collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction",
+    "invalidExample": null,
+    "validExample": null,
+    "info": "If anything of the above is applicable to your organization, it requires personal data processing in order to carry out its business",
+    "answers": [
+      {
+        "code": "G_OPROCDATA",
+        "text": "My rganization requires processing of personal data in order to carry out its business"
+      },
+      {
+        "code": "G_NOPROCDATA",
+        "text": "My organization does not carry out personal data processing"
+      },
+      {
+        "code": "G_NOTKNOW",
+        "text": "I am not sure about the answer"
+      }
+    ],
+    "references": [
+      {
+        "title": "Art. 4 GDPR Definitions",
+        "link": "https://gdpr-info.eu/art-4-gdpr/"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 4,
+    "title": "Does your organization decides on aims and means of PD processing?",
+    "invalidExample": null,
+    "validExample": null,
+    "info": "Your organization possesses the data and decides on what to do with it in order to fulfill own interest",
+    "answers": [
+      {
+        "code": "G_OAIMS",
+        "text": "Yes, my organization takes a complete responsibility for the personal data provided"
+      },
+      {
+        "code": "G_NOAIMS",
+        "text": "No, my organization does processing on behalf of another organization and has to address its interests"
+      },
+      {
+        "code": "G_NOTKNOW",
+        "text": "I am not sure about the answer"
+      }
+    ],
+    "references": [
+      {
+        "title": "Article 24 GDPR 'Responsibility of the controller'",
+        "link": "https://gdpr-info.eu/art-24-gdpr/"
+      },
+      {
+        "title": "Article 28 GDPR 'Processor'",
+        "link": "https://gdpr-info.eu/art-28-gdpr/"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 5,
+    "title": "Do individuals give a consent for processing their personal data? Do you provide them with a Consent Clause Form?",
+    "invalidExample": null,
+    "validExample": null,
+    "info": "If your organization collects personal data on the web-site there should be a pop-up window with consent request",
+    "answers": [
+      {
+        "code": "C_GIVECONSENT",
+        "text": "Individuals give an explicit consent to the processing of their personal data for purposes of my organization"
+      },
+      {
+        "code": "C_NGIVECONSENT",
+        "text": "Individuals are not asked a permission to process their personal data"
+      },
+      {
+        "code": "C_NGIVECONSENT",
+        "text": "My organization has another basis for personal data processing"
+      }
+    ],
+    "references": [
+      {
+        "title": "Consent, forms & GDPR Best Practice Guide",
+        "link": "http://www.gf4b.co.uk/wp-content/uploads/2017/10/GDPR-Whitepaper-Forms.pdf"
+      },
+      {
+        "title": "Art. 7 GDPR Conditions for consent",
+        "link": "https://gdpr-info.eu/art-7-gdpr/"
+      },
+      {
+        "title": "Art. 6 GDPR Lawfulness of processing",
+        "link": "https://gdpr-info.eu/art-6-gdpr/"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 6,
+    "title": "Consent must be unambiguous. This means customers need to easily understand what they are signing up for. Is there any doubt in your statements?",
+    "invalidExample": {
+      "title": "Examples of invalid consent:",
+      "list": ["Click to accept", "I agree"]
+    },
+    "validExample": {
+      "title": "Examples of valid consent:",
+      "list": [
+        "I would like to receive emails from [Brand name]",
+        "Sign me up for email communications",
+        "I understand and agree to the email marketing terms & conditions"
+      ]
+    },
+    "info": "For information, please, visit the references from reference section",
+    "answers": [
+      {
+        "code": "C_VALDCONS",
+        "text": "Statements on the consent form of my organization are clear, precise and similar to ones from the valid example"
+      },
+      {
+        "code": "C_INVALDCONS",
+        "text": "Statements on the consent form of my organization are more similar to the ones on the invalid example"
+      },
+      {
+        "code": "G_NOTKNOW",
+        "text": "I am not sure about the answer"
+      }
+    ],
+    "references": [
+      {
+        "title": "Consent, forms & GDPR Best Practice Guide",
+        "link": "http://www.gf4b.co.uk/wp-content/uploads/2017/10/GDPR-Whitepaper-Forms.pdf"
+      },
+      {
+        "title": "Art. 7 GDPR Conditions for consent",
+        "link": "https://gdpr-info.eu/art-7-gdpr/"
+      },
+      {
+        "title": "Art. 6 GDPR Lawfulness of processing",
+        "link": "https://gdpr-info.eu/art-6-gdpr/"
+      }
+    ],
+    "isLast": true
+  }
+]

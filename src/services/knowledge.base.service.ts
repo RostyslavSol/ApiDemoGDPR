@@ -24,7 +24,7 @@ export class KnowledgeBaseService {
   }
 
   public async getQuestion(sectionId: number, questionId: number): Promise<IQuestion> {
-    return await Promise.resolve(this.knowledgeRepository.question);
+    return await Promise.resolve(this.knowledgeRepository.questions.find(x => x.questionId === questionId));
   }
 
   public async getReport(sectionId: number): Promise<IReport> {
