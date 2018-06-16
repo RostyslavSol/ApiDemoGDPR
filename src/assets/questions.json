@@ -1,93 +1,20 @@
 [
   {
     "questionId": 1,
-    "title": "Does the organization offers goods and services via the Internet?",
+    "title": "Does your organization performs any of the following actions with the data: collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction?",
     "invalidExample": null,
     "validExample": null,
     "info": "No additional information provided",
     "answers": [
       {
-        "code": "G_GDSSERVINET",
-        "text": "My organization provides goods and services through the internet"
-      },
-      {
-        "code": "G_NGDSSERVINET",
-        "text": "My organization does not carry out any internet related activity"
-      }
-    ],
-    "references": [],
-    "isLast": false
-  },
-  {
-    "questionId": 2,
-    "title": "Are there citizens of EU among organization's clients?",
-    "invalidExample": null,
-    "validExample": null,
-    "info": "Citizenship of the European Union (EU) is afforded to qualifying citizens of European Union member states. List of member states can be found in the references section on the right",
-    "answers": [
-      {
-        "code": "G_EUCTZCLIENT",
-        "text": "Yes, my organization operates on personal data of EU citizens"
-      },
-      {
-        "code": "G_NEUCTZCLIENT",
-        "text": "No, my organization does not possess any personal data of EU citizens"
-      }
-    ],
-    "references": [
-      {
-        "title": "EU member state list",
-        "link": "https://en.wikipedia.org/wiki/Member_state_of_the_European_Union#List"
-      }
-    ],
-    "isLast": false
-  },
-  {
-    "questionId": 3,
-    "title": "Does your organization performs any of the following actions with the data: collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction",
-    "invalidExample": null,
-    "validExample": null,
-    "info": "If anything of the above is applicable to your organization, it requires personal data processing in order to carry out its business",
-    "answers": [
-      {
+        "questionId": 1,
         "code": "G_OPROCDATA",
-        "text": "My rganization requires processing of personal data in order to carry out its business"
+        "text": "My organization does perform 1 or more of the enlisted actions"
       },
       {
-        "code": "G_NOPROCDATA",
-        "text": "My organization does not carry out personal data processing"
-      },
-      {
-        "code": "G_NOTKNOW",
-        "text": "I am not sure about the answer"
-      }
-    ],
-    "references": [
-      {
-        "title": "Art. 4 GDPR Definitions",
-        "link": "https://gdpr-info.eu/art-4-gdpr/"
-      }
-    ],
-    "isLast": false
-  },
-  {
-    "questionId": 4,
-    "title": "Does your organization decides on aims and means of PD processing?",
-    "invalidExample": null,
-    "validExample": null,
-    "info": "Your organization possesses the data and decides on what to do with it in order to fulfill own interest",
-    "answers": [
-      {
-        "code": "G_OAIMS",
-        "text": "Yes, my organization takes a complete responsibility for the personal data provided"
-      },
-      {
-        "code": "G_NOAIMS",
-        "text": "No, my organization does processing on behalf of another organization and has to address its interests"
-      },
-      {
-        "code": "G_NOTKNOW",
-        "text": "I am not sure about the answer"
+        "questionId": 1,
+        "code": "NOT_G_OPROCDATA",
+        "text": "My organization does not carry out any related activity"
       }
     ],
     "references": [
@@ -103,23 +30,71 @@
     "isLast": false
   },
   {
-    "questionId": 5,
-    "title": "Do individuals give a consent for processing their personal data? Do you provide them with a Consent Clause Form?",
+    "questionId": 2,
+    "title": "Does your organization decides on aims and means of PD processing?",
     "invalidExample": null,
     "validExample": null,
-    "info": "If your organization collects personal data on the web-site there should be a pop-up window with consent request",
+    "info": "This means that organization takes full responsibility for actions being performed on the personal data",
     "answers": [
       {
+        "questionId": 2,
+        "code": "G_OCTRL",
+        "text": "Yes, my organization takes full responsibility for the granted personal data and its processing"
+      },
+      {
+        "questionId": 2,
+        "code": "NOT_G_OCTRL",
+        "text": "No, my organization does processing on behalf of another organization and does not decide on aims of processing"
+      },
+      {
+        "questionId": 2,
+        "code": "G_ILLEGALPROC",
+        "text": "Nothing of the above"
+      }
+    ],
+    "references": [
+      {
+        "title": "Article 24 GDPR 'Responsibility of the controller'",
+        "link": "https://gdpr-info.eu/art-24-gdpr/"
+      },
+      {
+        "title": "Article 28 GDPR 'Processor'",
+        "link": "https://gdpr-info.eu/art-28-gdpr/"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 3,
+    "title": "Do individuals give a consent for processing their personal data? Do you provide them with a Consent Clause Form?",
+    "invalidExample": {
+      "title": "Examples of invalid consent:",
+      "list": ["Click to accept", "I agree"]
+    },
+    "validExample": {
+      "title": "Examples of valid consent:",
+      "list": [
+        "I would like to receive emails from [Brand name]",
+        "Sign me up for email communications",
+        "I understand and agree to the email marketing terms & conditions"
+      ]
+    },
+    "info": "Consent means offering individuals real choice and control. Genuine consent should put individuals in charge, build trust and engagement, and enhance your reputation.",
+    "answers": [
+      {
+        "questionId": 3,
         "code": "C_GIVECONSENT",
-        "text": "Individuals give an explicit consent to the processing of their personal data for purposes of my organization"
+        "text": "Yes, individuals give the explicit consent to the processing of their personal data for one or more specified purposes"
       },
       {
-        "code": "C_NGIVECONSENT",
-        "text": "Individuals are not asked a permission to process their personal data"
+        "questionId": 3,
+        "code": "NOT_G_GIVECONSENT",
+        "text": "No, individuals are not provided with a consent form or they are not asked for permission"
       },
       {
-        "code": "C_NGIVECONSENT",
-        "text": "My organization has another basis for personal data processing"
+        "questionId": 3,
+        "code": "G_NOTKNOW",
+        "text": "I am not sure about the answer"
       }
     ],
     "references": [
@@ -139,7 +114,7 @@
     "isLast": false
   },
   {
-    "questionId": 6,
+    "questionId": 4,
     "title": "Consent must be unambiguous. This means customers need to easily understand what they are signing up for. Is there any doubt in your statements?",
     "invalidExample": {
       "title": "Examples of invalid consent:",
@@ -156,14 +131,17 @@
     "info": "For information, please, visit the references from reference section",
     "answers": [
       {
+        "questionId": 4,
         "code": "C_VALDCONS",
         "text": "Statements on the consent form of my organization are clear, precise and similar to ones from the valid example"
       },
       {
+        "questionId": 4,
         "code": "C_INVALDCONS",
         "text": "Statements on the consent form of my organization are more similar to the ones on the invalid example"
       },
       {
+        "questionId": 4,
         "code": "G_NOTKNOW",
         "text": "I am not sure about the answer"
       }
@@ -180,6 +158,196 @@
       {
         "title": "Art. 6 GDPR Lawfulness of processing",
         "link": "https://gdpr-info.eu/art-6-gdpr/"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 5,
+    "title": "Do individuals sign a contract with your organization in order to process their personal data?",
+    "invalidExample": null,
+    "validExample": null,
+    "info": "Whenever a controller uses a processor it needs to have a written contract in place.",
+    "answers": [
+      {
+        "questionId": 5,
+        "code": "C_OHASCTRCT",
+        "text": "Organization has a contract with data subject whose Personal Data are being processed"
+      },
+      {
+        "questionId": 5,
+        "code": "NOT_C_OHASCTRCT",
+        "text": "No contract about personal data processing has been signed"
+      }
+    ],
+    "references": [
+      {
+        "title": "Article 4 GDPR 'Definitions'",
+        "link": "https://gdpr-info.eu/art-4-gdpr/"
+      },
+      {
+        "title": "Article 28 GDPR 'Processor'",
+        "link": "https://gdpr-info.eu/art-28-gdpr/"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 6,
+    "title": "Do you have to process their personal data to comply with your obligations under the contract?",
+    "invalidExample": null,
+    "validExample": null,
+    "info": "Contract should be signed and preserved by both sides",
+    "answers": [
+      {
+        "questionId": 6,
+        "code": "C_OOBLIGATIONS",
+        "text": "Yes, organization needs to process Personal Data to comply with it’s obligations under the contract"
+      },
+      {
+        "questionId": 6,
+        "code": "NOT_C_OOBLIGATIONS",
+        "text": "No, organization processes data for different purpose"
+      }
+    ],
+    "references": [
+      {
+        "title": "Article 24 GDPR 'Responsibility of the controller'",
+        "link": "https://gdpr-info.eu/art-24-gdpr/"
+      },
+      {
+        "title": "Article 28 GDPR 'Processor'",
+        "link": "https://gdpr-info.eu/art-28-gdpr/"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 7,
+    "title": "Did individual asked you to do something as a first step (eg provide a quote) and you need to process his personal data to do what he asks?",
+    "invalidExample": null,
+    "validExample": null,
+    "info": "This means that an individual has performed direct request to your organization to process his/her personal data",
+   "answers": [
+      {
+        "questionId": 7,
+        "code": "C_ASKFIRSTSTEP",
+        "text": "Yes, individuals perform specific request to my organization in order to process their personal data"
+      },
+      {
+        "questionId": 7,
+        "code": "NOT_C_ASKFIRSTSTEP",
+        "text": "No, there are no requests from individuals"
+      }
+    ],
+    "references": [
+      {
+        "title": "Article 24 GDPR 'Responsibility of the controller'",
+        "link": "https://gdpr-info.eu/art-24-gdpr/"
+      },
+      {
+        "title": "Article 28 GDPR 'Processor'",
+        "link": "https://gdpr-info.eu/art-28-gdpr/"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 8,
+    "title": "Are you obliged to process the personal data to comply with the law?",
+    "invalidExample": null,
+    "validExample": {
+      "title": "Example of legal obligation",
+      "list": [
+        "An employer needs to process personal data to comply with its legal obligation to disclose employee salary details to HMRC.",
+        "The employer can point to the HMRC website where the requirements are set out to demonstrate this obligation. In this situation it is not necessary to cite each specific piece of legislation."
+      ]
+    },
+    "info": "There is a specific law of your country that requires you to collect personal data",
+    "answers": [
+      {
+        "questionId": 8,
+        "code": "C_LAWCOMPLY",
+        "text": "Yes, organization's intentions are similar to ones in the example"
+      },
+      {
+        "questionId": 8,
+        "code": "NOT_C_LAWCOMPLY",
+        "text": "No, organization's intentions are different from ones in the example"
+      }
+    ],
+    "references": [
+      {
+        "title": "Art. 6 GDPR Lawfulness of processing",
+        "link": "https://gdpr-info.eu/art-6-gdpr/"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 9,
+    "title": "Is the personal data processing necessary to protect vital interests of data subject or another natural person?",
+    "invalidExample": null,
+    "validExample": {
+      "title": "Example of vital interest",
+      "list": [
+        "An individual has been taken by ambulance unconscious. Hospital has to process his personal data in order to save his life"
+      ]
+    },
+    "info": "Processing is necessary for the purposes of preventive or occupational medicine, for the assessment of the working capacity of the employee, medical diagnosis, the provision of health or social care or treatment or the management of health or social care systems and services on the basis of Union or Member State law or pursuant to contract with a health professional and subject to the conditions and safeguards referred to in paragraph 3",
+    "answers": [
+      {
+        "questionId": 9,
+        "code": "C_OPROTINTRST",
+        "text": "Yes, the base for personal data processing is similar to one in the example"
+      },
+      {
+        "questionId": 9,
+        "code": "NOT_C_OPROTINTRST",
+        "text": "No, personal data are being processed for different purpose"
+      }
+    ],
+    "references": [
+      {
+        "title": "Art. 6 GDPR Lawfulness of processing",
+        "link": "https://gdpr-info.eu/art-6-gdpr/"
+      }
+    ],
+    "isLast": false
+  },
+  {
+    "questionId": 10,
+    "title": "Does your organization implement a task which has been assigned in the public interests or in terms of assistance for official authority?",
+    "invalidExample": null,
+    "validExample": {
+      "title": "Example of processing based on public interest",
+      "list": [
+        "Your organization is a public authority (see 1st reference)",
+        "Processing is necessary for reasons of public interest in the area of public health, such as protecting against serious cross-border threats to health or ensuring high standards of quality and safety of health care and of medicinal products or medical devices, on the basis of Union or Member State law which provides for suitable and specific measures to safeguard the rights and freedoms of the data subject, in particular professional secrecy",
+        "Processing is necessary for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes in accordance with Article 89(1) based on Union or Member State law which shall be proportionate to the aim pursued, respect the essence of the right to data protection and provide for suitable and specific measures to safeguard the fundamental rights and the interests of the data subject"
+      ]
+    },
+    "info": "Your organization has been assigned to assist official authority",
+    "answers": [
+      {
+        "questionId": 10,
+        "code": "C_ASSGNTASK",
+        "text": "Yes, my organization performes a specific task similar to the enlisted in example section"
+      },
+      {
+        "questionId": 10,
+        "code": "NOT_C_ASSGNTASK",
+        "text": "No task has been assigned to my organization which would be similar to any of the examples"
+      }
+    ],
+    "references": [
+      {
+        "title": "ICO: Public task",
+        "link": "https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/public-task/"
+      },
+      {
+        "title": "Public authorities under the EIR",
+        "link": "https://ico.org.uk/media/for-organisations/documents/1623665/public-authorities-under-eir.pdf"
       }
     ],
     "isLast": true

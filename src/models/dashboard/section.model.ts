@@ -4,4 +4,5 @@ export interface ISection {
   text: string;
   redirectUrl: string;
   svgUrl: string;
+  isDisabled: boolean;
 }

@@ -7,4 +7,5 @@ export interface IReport {
   sectionId: number;
   sectionName: string;
   summary: ISummaryItem[];
+  isCompliant: boolean;
 }

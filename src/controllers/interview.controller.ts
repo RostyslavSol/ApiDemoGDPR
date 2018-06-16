@@ -6,7 +6,7 @@ export class InterviewController {
   private _service: KnowledgeBaseService;
 
   constructor(router: Router) {
-    this._service = new KnowledgeBaseService();
+    this._service = KnowledgeBaseService.getInstance();
 
     this.registerGetQuestion(router);
   }

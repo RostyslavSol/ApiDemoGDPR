@@ -6,7 +6,7 @@ export class DashboardController {
   private _service: KnowledgeBaseService;
 
   constructor(router: Router) {
-    this._service = new KnowledgeBaseService();
+    this._service = KnowledgeBaseService.getInstance();
 
     this.registerGetSections(router);
   }

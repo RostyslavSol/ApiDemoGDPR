@@ -7,12 +7,14 @@ import { ISectionDetails } from '../models/section.details/section.details.model
 import { IReport } from '../models/report/report.model';
 
 export class KnowledgeBaseService {
+  private static _instance: KnowledgeBaseService;
+
   knowledgeRepository: KnowledgeRepository;
   reportGenerator: ReportGenerator;
 
-  constructor() {
-    this.knowledgeRepository = new KnowledgeRepository();
-    this.reportGenerator     = new ReportGenerator();
+  private constructor() {
+    this.knowledgeRepository = KnowledgeRepository.getInstance();
+    this.reportGenerator     = ReportGenerator.getInstance();
   }
 
   public async getSections(): Promise<ISection[]> {
@@ -28,6 +30,14 @@ export class KnowledgeBaseService {
   }
 
   public async getReport(sectionId: number): Promise<IReport> {
-    return await Promise.resolve(this.reportGenerator.report);
+    return await Promise.resolve(this.reportGenerator.generateReport());
+  }
+
+  public static getInstance(): KnowledgeBaseService {
+    if (!this._instance) {
+      this._instance = new KnowledgeBaseService();
+    }
+
+    return this._instance;
   }
 }

@@ -6,11 +6,13 @@ import { IQuestion } from "../models/interview/question.model";
 import * as fs from 'fs';
 
 export class KnowledgeRepository {
+  private static _instance: KnowledgeRepository;
+
   sections: ISection[];
   sectionDetails: ISectionDetails;
   questions: IQuestion[];
 
-  constructor() {
+  private constructor() {
     fs.readFile('C:/source/ApiDemoGDPR/src/assets/sections.json', 'utf8', (err, data) => {
       this.sections = JSON.parse(data) as ISection[];
     });
@@ -22,5 +24,13 @@ export class KnowledgeRepository {
     fs.readFile('C:/source/ApiDemoGDPR/src/assets/questions.json', 'utf8', (err, data) => {
       this.questions = JSON.parse(data) as IQuestion[];
     });
+  }
+
+  public static getInstance(): KnowledgeRepository {
+    if (!this._instance) {
+      this._instance = new KnowledgeRepository();
+    }
+
+    return this._instance;
   }
 }
